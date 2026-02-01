@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { getAllServices } from '@/lib/services';
 import { calculateBudgetItem, calculateTotalBudget, formatCurrency, generateId } from '@/lib/calculations';
@@ -8,7 +8,7 @@ import { saveBudget } from '@/lib/storage';
 import { sendBudgetViaWhatsApp } from '@/lib/whatsapp';
 import styles from './page.module.css';
 
-export default function CalculadoraPage() {
+function CalculadoraContent() {
     const searchParams = useSearchParams();
     const preselectedServiceId = searchParams.get('service');
 
@@ -388,5 +388,13 @@ export default function CalculadoraPage() {
                 </div>
             )}
         </div>
+    );
+}
+
+export default function CalculadoraPage() {
+    return (
+        <Suspense fallback={<div className="container" style={{ padding: '2rem', textAlign: 'center' }}>Cargando calculadora...</div>}>
+            <CalculadoraContent />
+        </Suspense>
     );
 }
