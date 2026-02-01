@@ -1,0 +1,379 @@
+.calculadoraPage {
+    padding: var(--spacing-2xl) 0;
+    min-height: 80vh;
+}
+
+.pageTitle {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.pageSubtitle {
+    text-align: center;
+    color: var(--gray-dark);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-2xl);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calculatorGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.formSection,
+.summarySection {
+    position: relative;
+}
+
+.summarySection {
+    position: sticky;
+    top: calc(80px + var(--spacing-md));
+}
+
+.card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    color: var(--secondary);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.formGroup {
+    margin-bottom: var(--spacing-lg);
+}
+
+.label {
+    display: block;
+    font-weight: 600;
+    color: var(--secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.input,
+.select {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid var(--light-gray);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: border-color var(--transition-fast);
+}
+
+.input:focus,
+.select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.serviceInfo {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--light-gray);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.serviceInfoIcon {
+    font-size: 3rem;
+}
+
+.serviceInfo h3 {
+    font-size: 1.25rem;
+    color: var(--secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.serviceInfo p {
+    color: var(--gray-dark);
+    margin-bottom: var(--spacing-xs);
+    font-size: 0.95rem;
+}
+
+.basePrice {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.preview {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--primary);
+}
+
+.preview h4 {
+    color: var(--secondary);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+}
+
+.previewGrid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.previewGrid>div {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-sm) 0;
+}
+
+.previewLabel {
+    color: var(--gray-dark);
+    font-weight: 500;
+}
+
+.previewValue {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.previewTotal {
+    border-top: 2px solid var(--primary);
+    padding-top: var(--spacing-md) !important;
+    margin-top: var(--spacing-sm);
+}
+
+.previewTotal .previewLabel {
+    font-weight: 700;
+    color: var(--secondary);
+    font-size: 1.1rem;
+}
+
+.previewTotal .previewValue {
+    color: var(--primary);
+    font-size: 1.3rem;
+}
+
+/* Presupuesto items */
+.emptyState {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    color: var(--gray);
+}
+
+.emptyState p:first-child {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.budgetItems {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: var(--spacing-sm);
+}
+
+.budgetItem {
+    padding: var(--spacing-lg);
+    background: var(--light-gray);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary);
+}
+
+.itemHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: var(--spacing-sm);
+}
+
+.itemHeader h4 {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    margin: 0;
+}
+
+.removeButton {
+    background: var(--error);
+    color: var(--white);
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.removeButton:hover {
+    transform: scale(1.1);
+    background: #c0392b;
+}
+
+.itemQuantity {
+    font-weight: 600;
+    color: var(--gray-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.itemOptions {
+    font-size: 0.9rem;
+    color: var(--gray);
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+}
+
+.itemCosts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    font-size: 0.95rem;
+}
+
+.itemCosts>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.itemCosts span:first-child {
+    color: var(--gray-dark);
+}
+
+.itemCosts span:last-child {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+}
+
+.itemSubtotal {
+    border-top: 1px solid var(--gray-light);
+    padding-top: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+    font-weight: 700;
+}
+
+.itemSubtotal span:first-child {
+    color: var(--secondary);
+}
+
+.itemSubtotal span:last-child {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.totalSection {
+    padding: var(--spacing-lg);
+    background: var(--gradient-hero);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.totalRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.totalLabel {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--white);
+}
+
+.totalAmount {
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--white);
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: var(--spacing-lg);
+}
+
+.modalContent {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
+    max-width: 500px;
+    width: 100%;
+    box-shadow: var(--shadow-xl);
+}
+
+.modalContent h3 {
+    color: var(--secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.modalActions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.modalActions button {
+    flex: 1;
+}
+
+.saveMessage {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: var(--spacing-xl);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .calculatorGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .summarySection {
+        position: static;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculadoraPage {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .card {
+        padding: var(--spacing-lg);
+    }
+
+    .budgetItems {
+        max-height: 400px;
+    }
+}

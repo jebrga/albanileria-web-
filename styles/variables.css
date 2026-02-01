@@ -1,0 +1,371 @@
+/* ==========================================
+   DARK MODE VARIABLES - Modern Construction Theme
+   ========================================== */
+
+:root {
+  /* ==========================================
+     DARK MODE COLOR PALETTE - Construction Premium
+     ========================================== */
+
+  /* Background Colors - Dark Theme */
+  --bg-primary: #0A0E27;
+  /* Deep navy background */
+  --bg-secondary: #131829;
+  /* Card background */
+  --bg-tertiary: #1A1F3A;
+  /* Elevated surfaces */
+  --bg-glass: rgba(19, 24, 41, 0.7);
+  /* Glassmorphism */
+
+  /* Construction Accent Colors */
+  --primary: #FF6B35;
+  /* Construction Orange - High energy */
+  --primary-light: #FF8555;
+  /* Lighter variant */
+  --primary-dark: #E6512A;
+  /* Darker variant */
+  --primary-glow: rgba(255, 107, 53, 0.3);
+
+  --secondary: #00D9FF;
+  /* Electric Blue - Modern tech */
+  --secondary-light: #33E0FF;
+  --secondary-dark: #00B8DB;
+  --secondary-glow: rgba(0, 217, 255, 0.3);
+
+  --accent: #FFB800;
+  /* Safety Yellow - Attention grabbing */
+  --accent-light: #FFC933;
+  --accent-glow: rgba(255, 184, 0, 0.3);
+
+  /* Success/Warning/Error Colors */
+  --success: #00E676;
+  --success-glow: rgba(0, 230, 118, 0.3);
+  --warning: #FFB800;
+  --error: #FF3D57;
+
+  /* Text Colors - High Contrast */
+  --text-primary: #FFFFFF;
+  --text-secondary: #B8C5D6;
+  /* Muted light blue-gray */
+  --text-tertiary: #6B7A90;
+  /* Even more muted */
+  --text-disabled: #3E4A5E;
+
+  /* Border & Divider Colors */
+  --border-subtle: rgba(184, 197, 214, 0.1);
+  --border-medium: rgba(184, 197, 214, 0.2);
+  --border-strong: rgba(184, 197, 214, 0.3);
+  --border-glow: rgba(0, 217, 255, 0.5);
+
+  /* Premium Gradients */
+  --gradient-primary: linear-gradient(135deg, #FF6B35 0%, #FF8555 100%);
+  --gradient-secondary: linear-gradient(135deg, #00D9FF 0%, #0099FF 100%);
+  --gradient-hero: linear-gradient(165deg, #0A0E27 0%, #1A1F3A 50%, #131829 100%);
+  --gradient-card: linear-gradient(135deg, rgba(19, 24, 41, 0.9) 0%, rgba(26, 31, 58, 0.9) 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(0, 217, 255, 0.1) 100%);
+
+  /* Shadows & Glows - Elevated UI */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.7);
+
+  --glow-primary: 0 0 20px var(--primary-glow), 0 0 40px var(--primary-glow);
+  --glow-secondary: 0 0 20px var(--secondary-glow), 0 0 40px var(--secondary-glow);
+  --glow-accent: 0 0 20px var(--accent-glow);
+  --glow-success: 0 0 20px var(--success-glow);
+
+  /* Glassmorphism Effects */
+  --glass-bg: rgba(19, 24, 41, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(20px);
+
+  /* Spacing System - 8px base */
+  --spacing-xs: 0.25rem;
+  /* 4px */
+  --spacing-sm: 0.5rem;
+  /* 8px */
+  --spacing-md: 1rem;
+  /* 16px */
+  --spacing-lg: 1.5rem;
+  /* 24px */
+  --spacing-xl: 2rem;
+  /* 32px */
+  --spacing-2xl: 3rem;
+  /* 48px */
+  --spacing-3xl: 4rem;
+  /* 64px */
+  --spacing-4xl: 6rem;
+  /* 96px */
+
+  /* Border Radius - Modern & Soft */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions & Animations */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Animation Durations */
+  --anim-fast: 200ms;
+  --anim-normal: 400ms;
+  --anim-slow: 600ms;
+
+  /* Z-Index Layers */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+
+  /* Typography Scale */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Roboto', sans-serif;
+  --font-mono: 'Roboto Mono', 'SF Mono', 'Monaco', monospace;
+
+  --font-size-xs: 0.75rem;
+  /* 12px */
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-base: 1rem;
+  /* 16px */
+  --font-size-lg: 1.125rem;
+  /* 18px */
+  --font-size-xl: 1.25rem;
+  /* 20px */
+  --font-size-2xl: 1.5rem;
+  /* 24px */
+  --font-size-3xl: 1.875rem;
+  /* 30px */
+  --font-size-4xl: 2.25rem;
+  /* 36px */
+  --font-size-5xl: 3rem;
+  /* 48px */
+  --font-size-6xl: 3.75rem;
+  /* 60px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Container Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+
+  /* Legacy Support - Backward Compatibility */
+  --dark: var(--bg-primary);
+  --white: var(--text-primary);
+  --gray: var(--text-tertiary);
+  --gray-dark: var(--text-secondary);
+  --light-gray: var(--bg-tertiary);
+}
+
+/* ==========================================
+   KEYFRAME ANIMATIONS
+   ========================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px var(--primary-glow);
+  }
+
+  50% {
+    box-shadow: var(--glow-primary);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================
+   UTILITY ANIMATION CLASSES
+   ========================================== */
+
+.animate-fade-in {
+  animation: fadeIn var(--anim-normal) var(--transition-normal) both;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp var(--anim-normal) var(--transition-normal) both;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown var(--anim-normal) var(--transition-normal) both;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--anim-normal) var(--transition-bounce) both;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight var(--anim-normal) var(--transition-normal) both;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft var(--anim-normal) var(--transition-normal) both;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animation Delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}

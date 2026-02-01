@@ -1,0 +1,320 @@
+.presupuestosPage {
+    padding: var(--spacing-2xl) 0;
+    min-height: 70vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    gap: var(--spacing-lg);
+}
+
+.pageTitle {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.pageSubtitle {
+    color: var(--gray-dark);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--light-gray);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.toolbarText {
+    font-weight: 500;
+    color: var(--secondary);
+    margin: 0;
+}
+
+.emptyState {
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    max-width: 600px;
+    margin: 4rem auto;
+}
+
+.emptyIcon {
+    font-size: 5rem;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.5;
+}
+
+.emptyState h2 {
+    color: var(--secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.emptyState p {
+    color: var(--gray-dark);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xl);
+}
+
+.budgetsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.budgetCard {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+}
+
+.budgetCard:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px);
+}
+
+.budgetCardSelected {
+    border-color: var(--primary);
+    background: linear-gradient(to bottom, #fff, #fff9f5);
+}
+
+.budgetCardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.budgetName {
+    font-size: 1.3rem;
+    color: var(--secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.budgetDate {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin: 0;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--primary);
+}
+
+.budgetItems h4 {
+    font-size: 1rem;
+    color: var(--secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.budgetItems ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-lg) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.budgetItems li {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--spacing-sm);
+    font-size: 0.9rem;
+    padding: var(--spacing-xs) 0;
+}
+
+.itemName {
+    font-weight: 500;
+    color: var(--gray-dark);
+}
+
+.itemQuantity {
+    color: var(--gray);
+    text-align: center;
+}
+
+.itemPrice {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    color: var(--secondary);
+    text-align: right;
+}
+
+.budgetTotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    background: var(--gradient-hero);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    color: var(--white);
+}
+
+.budgetTotal span:first-child {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.totalAmount {
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.budgetActions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+/* Comparison View */
+.comparisonView {
+    margin-top: var(--spacing-xl);
+}
+
+.comparisonTitle {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: var(--spacing-xl);
+}
+
+.comparisonGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.comparisonCard {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+    border: 3px solid var(--primary);
+}
+
+.comparisonHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: var(--spacing-md);
+}
+
+.comparisonHeader h3 {
+    font-size: 1.4rem;
+    color: var(--secondary);
+    margin: 0;
+}
+
+.deselectButton {
+    background: var(--error);
+    color: var(--white);
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.deselectButton:hover {
+    transform: scale(1.1);
+    background: #c0392b;
+}
+
+.comparisonDate {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: var(--spacing-lg);
+}
+
+.comparisonItems {
+    margin-bottom: var(--spacing-lg);
+}
+
+.comparisonItems h4 {
+    font-size: 1rem;
+    color: var(--secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.comparisonItems ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.comparisonItems li {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    font-size: 0.9rem;
+    padding: var(--spacing-xs);
+    background: var(--light-gray);
+    border-radius: var(--radius-sm);
+}
+
+.comparisonTotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    background: var(--gradient-card);
+    border-radius: var(--radius-md);
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.comparisonTotal span:last-child {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.6rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: start;
+    }
+
+    .budgetsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .comparisonGrid {
+        grid-template-columns: 1fr;
+    }
+}

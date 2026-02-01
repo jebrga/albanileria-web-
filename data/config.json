@@ -1,0 +1,16 @@
+{
+    "company": {
+        "name": "Trabajos de Albañilería",
+        "owner": "Ezequiel Gauna",
+        "fullName": "Trabajos de Albañilería - Ezequiel Gauna",
+        "phone": "5491112345678",
+        "email": "ezequielgauna@albanileria.com",
+        "address": "Buenos Aires, Argentina"
+    },
+    "settings": {
+        "currency": "ARS",
+        "currencySymbol": "$",
+        "taxRate": 0,
+        "adminPassword": "admin123"
+    }
+}

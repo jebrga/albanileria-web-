@@ -1,0 +1,321 @@
+{
+    "services": [
+        {
+            "id": "contrapiso",
+            "name": "Contrapiso",
+            "description": "Nivelación de piso base con mezcla de cemento y arena",
+            "unit": "m²",
+            "pricePerUnit": 15000,
+            "materialCost": 8000,
+            "laborCost": 7000,
+            "category": "pisos",
+            "icon": "🏗️",
+            "options": [
+                {
+                    "id": "espesor",
+                    "name": "Espesor",
+                    "type": "select",
+                    "choices": [
+                        {
+                            "value": "5cm",
+                            "label": "5 cm",
+                            "priceModifier": 1.0
+                        },
+                        {
+                            "value": "7cm",
+                            "label": "7 cm",
+                            "priceModifier": 1.3
+                        },
+                        {
+                            "value": "10cm",
+                            "label": "10 cm",
+                            "priceModifier": 1.6
+                        }
+                    ]
+                },
+                {
+                    "id": "calidad",
+                    "name": "Calidad del material",
+                    "type": "select",
+                    "choices": [
+                        {
+                            "value": "estandar",
+                            "label": "Estándar",
+                            "priceModifier": 1.0
+                        },
+                        {
+                            "value": "premium",
+                            "label": "Premium",
+                            "priceModifier": 1.25
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ceramica",
+            "name": "Colocación de Cerámica",
+            "description": "Instalación profesional de cerámica en pisos y paredes",
+            "unit": "m²",
+            "pricePerUnit": 12000,
+            "materialCost": 5000,
+            "laborCost": 7000,
+            "category": "revestimientos",
+            "icon": "🔨",
+            "options": [
+                {
+                    "id": "tipo",
+                    "name": "Tipo de cerámica",
+                    "type": "select",
+                    "choices": [
+                        {
+                            "value": "piso",
+                            "label": "Piso",
+                            "priceModifier": 1.0
+                        },
+                        {
+                            "value": "pared",
+                            "label": "Pared",
+                            "priceModifier": 0.9
+                        },
+                        {
+                            "value": "porcelanato",
+                            "label": "Porcelanato",
+                            "priceModifier": 1.4
+                        }
+                    ]
+                },
+                {
+                    "id": "calidad",
+                    "name": "Calidad de instalación",
+                    "type": "select",
+                    "choices": [
+                        {
+                            "value": "estandar",
+                            "label": "Estándar",
+                            "priceModifier": 1.0
+                        },
+                        {
+                            "value": "premium",
+                            "label": "Premium (con cenefa)",
+                            "priceModifier": 1.2
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "revoques",
+            "name": "Revoques",
+            "description": "Revoque grueso y fino para paredes interiores y exteriores",
+            "unit": "m²",
+            "pricePerUnit": 10000,
+            "materialCost": 4500,
+            "laborCost": 5500,
+            "category": "terminaciones",
+            "icon": "🧱",
+            "options": [
+                {
+                    "id": "tipo",
+                    "name": "Tipo de revoque",
+                    "type": "select",
+                    "choices": [
+                        {
+                            "value": "grueso",
+                            "label": "Grueso",
+                            "priceModifier": 0.8
+                        },
+                        {
+                            "value": "fino",
+                            "label": "Fino",
+                            "priceModifier": 1.0
+                        },
+                        {
+                            "value": "completo",
+                            "label": "Completo (grueso + fino)",
+                            "priceModifier": 1.6
+                        }
+                    ]
+                },
+                {
+                    "id": "ubicacion",
+                    "name": "Ubicación",
+                    "type": "select",
+                    "choices": [
+                        {
+                            "value": "interior",
+                            "label": "Interior",
+                            "priceModifier": 1.0
+                        },
+                        {
+                            "value": "exterior",
+                            "label": "Exterior",
+                            "priceModifier": 1.15
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aberturas",
+            "name": "Instalación de Aberturas",
+            "description": "Colocación de puertas, ventanas y marcos",
+            "unit": "unidad",
+            "pricePerUnit": 25000,
+            "materialCost": 12000,
+            "laborCost": 13000,
+            "category": "aberturas",
+            "icon": "🚪",
+            "options": [
+                {
+                    "id": "tipo",
+                    "name": "Tipo de abertura",
+                    "type": "select",
+                    "choices": [
+                        {
+                            "value": "puerta",
+                            "label": "Puerta",
+                            "priceModifier": 1.0
+                        },
+                        {
+                            "value": "ventana",
+                            "label": "Ventana",
+                            "priceModifier": 0.8
+                        },
+                        {
+                            "value": "porton",
+                            "label": "Portón",
+                            "priceModifier": 1.5
+                        }
+                    ]
+                },
+                {
+                    "id": "material",
+                    "name": "Material",
+                    "type": "select",
+                    "choices": [
+                        {
+                            "value": "chapa",
+                            "label": "Chapa",
+                            "priceModifier": 1.0
+                        },
+                        {
+                            "value": "aluminio",
+                            "label": "Aluminio",
+                            "priceModifier": 1.3
+                        },
+                        {
+                            "value": "madera",
+                            "label": "Madera",
+                            "priceModifier": 1.2
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "encadenamiento",
+            "name": "Encadenamiento",
+            "description": "Cadena de hormigón armado para refuerzo estructural",
+            "unit": "metro lineal",
+            "pricePerUnit": 18000,
+            "materialCost": 10000,
+            "laborCost": 8000,
+            "category": "estructura",
+            "icon": "⚡",
+            "options": [
+                {
+                    "id": "ubicacion",
+                    "name": "Ubicación",
+                    "type": "select",
+                    "choices": [
+                        {
+                            "value": "superior",
+                            "label": "Superior",
+                            "priceModifier": 1.0
+                        },
+                        {
+                            "value": "inferior",
+                            "label": "Inferior (cimiento)",
+                            "priceModifier": 1.2
+                        }
+                    ]
+                },
+                {
+                    "id": "seccion",
+                    "name": "Sección",
+                    "type": "select",
+                    "choices": [
+                        {
+                            "value": "15x15",
+                            "label": "15x15 cm",
+                            "priceModifier": 1.0
+                        },
+                        {
+                            "value": "20x20",
+                            "label": "20x20 cm",
+                            "priceModifier": 1.4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "paredes",
+            "name": "Colocación de Paredes",
+            "description": "Construcción de paredes con ladrillos huecos o bloques",
+            "unit": "m²",
+            "pricePerUnit": 14000,
+            "materialCost": 7500,
+            "laborCost": 6500,
+            "category": "albañileria",
+            "icon": "🧱",
+            "options": [
+                {
+                    "id": "material",
+                    "name": "Material",
+                    "type": "select",
+                    "choices": [
+                        {
+                            "value": "ladrillo_hueco",
+                            "label": "Ladrillo hueco",
+                            "priceModifier": 1.0
+                        },
+                        {
+                            "value": "ladrillo_comun",
+                            "label": "Ladrillo común",
+                            "priceModifier": 1.1
+                        },
+                        {
+                            "value": "bloque",
+                            "label": "Bloque de hormigón",
+                            "priceModifier": 0.95
+                        }
+                    ]
+                },
+                {
+                    "id": "espesor",
+                    "name": "Espesor",
+                    "type": "select",
+                    "choices": [
+                        {
+                            "value": "12cm",
+                            "label": "12 cm (tabique)",
+                            "priceModifier": 1.0
+                        },
+                        {
+                            "value": "20cm",
+                            "label": "20 cm (standard)",
+                            "priceModifier": 1.3
+                        },
+                        {
+                            "value": "30cm",
+                            "label": "30 cm (portante)",
+                            "priceModifier": 1.6
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

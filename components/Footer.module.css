@@ -1,0 +1,125 @@
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    padding: var(--spacing-2xl) 0 var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.footerContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.footerSection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.footerTitle {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+    font-weight: var(--font-weight-bold);
+}
+
+.footerIcon {
+    font-size: 1.75rem;
+}
+
+.footerDescription {
+    color: var(--text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+    font-size: var(--font-size-sm);
+}
+
+.footerSubtitle {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-sm);
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footerLinks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.footerLinks li {
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+    font-size: var(--font-size-sm);
+}
+
+.footerLinks li:hover {
+    color: var(--text-primary);
+    transform: translateX(4px);
+}
+
+.footerLinks a {
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.footerLinks a:hover {
+    color: var(--secondary);
+    text-shadow: 0 0 10px var(--secondary-glow);
+}
+
+.footerBottom {
+    border-top: 1px solid var(--border-subtle);
+    padding-top: var(--spacing-lg);
+    text-align: center;
+    color: var(--text-tertiary);
+}
+
+.footerBottom p {
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+}
+
+.footerCredit {
+    font-size: var(--font-size-xs);
+    opacity: 0.7;
+    color: var(--text-tertiary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer {
+        padding: var(--spacing-xl) 0 var(--spacing-lg);
+    }
+
+    .footerContent {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .footerSection {
+        text-align: center;
+    }
+
+    .footerTitle {
+        justify-content: center;
+    }
+
+    .footerLinks li,
+    .footerLinks a {
+        text-align: center;
+    }
+}
