@@ -2,10 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useConfig } from './ConfigProvider';
+import ThemeToggle from './ThemeToggle';
 import styles from './Header.module.css';
 
 export default function Header() {
     const pathname = usePathname();
+    const { config } = useConfig();
 
     const isActive = (path) => pathname === path;
 
@@ -16,7 +19,8 @@ export default function Header() {
                     <Link href="/" className={styles.logo}>
                         <span className={styles.logoIcon}>🏗️</span>
                         <span className={styles.logoText}>
-                            <strong>Ezequiel Gauna</strong>
+                            <strong>{config.company_name}</strong>
+                            <span className={styles.logoLocation}>GBA Norte</span>
                         </span>
                     </Link>
 
@@ -47,9 +51,12 @@ export default function Header() {
                         </Link>
                     </nav>
 
-                    <Link href="/calculadora" className="btn btn-primary">
-                        📐 Calcular Presupuesto
-                    </Link>
+                    <div className={styles.headerActions}>
+                        <ThemeToggle />
+                        <Link href="/calculadora" className="btn btn-primary">
+                            📐 Calcular Presupuesto
+                        </Link>
+                    </div>
                 </div>
             </div>
         </header>

@@ -1,0 +1,139 @@
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal-backdrop);
+    padding: var(--spacing-lg);
+    animation: fadeIn var(--anim-fast) ease-out;
+}
+
+.modal {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-xl);
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    animation: scaleIn var(--anim-normal) var(--transition-bounce);
+}
+
+.closeButton {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: all var(--transition-fast);
+    z-index: 1;
+}
+
+.closeButton:hover {
+    background: var(--error);
+    color: white;
+    transform: scale(1.1);
+}
+
+.modalImage {
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.modalImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modalContent {
+    padding: var(--spacing-2xl) var(--spacing-xl);
+}
+
+.modalTitle {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.modalBody {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--text-secondary);
+}
+
+.modalBody p {
+    margin-bottom: var(--spacing-md);
+}
+
+.modalBody ul,
+.modalBody ol {
+    margin-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.modalBody li {
+    margin-bottom: var(--spacing-sm);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .modalBackdrop {
+        padding: var(--spacing-md);
+    }
+
+    .modal {
+        max-height: 95vh;
+    }
+
+    .modalContent {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .modalTitle {
+        font-size: var(--font-size-xl);
+    }
+}

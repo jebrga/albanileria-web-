@@ -23,10 +23,15 @@ export default function MisPresupuestosPage() {
     };
 
     const handleDelete = (id) => {
+        console.log('[DELETE] Attempting to delete budget:', id);
         if (confirm('¿Estás seguro de eliminar este presupuesto?')) {
+            console.log('[DELETE] User confirmed deletion');
             deleteBudget(id);
             loadBudgets();
             setSelectedBudgets(prev => prev.filter(budgetId => budgetId !== id));
+            console.log('[DELETE] Budget deleted and list reloaded');
+        } else {
+            console.log('[DELETE] User cancelled deletion');
         }
     };
 

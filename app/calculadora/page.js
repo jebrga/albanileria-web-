@@ -6,6 +6,8 @@ import { getAllServices } from '@/lib/services';
 import { calculateBudgetItem, calculateTotalBudget, formatCurrency, generateId } from '@/lib/calculations';
 import { saveBudget } from '@/lib/storage';
 import { sendBudgetViaWhatsApp } from '@/lib/whatsapp';
+import PaymentOptions from '@/components/PaymentOptions';
+import Tooltip from '@/components/Tooltip';
 import styles from './page.module.css';
 
 function CalculadoraContent() {
@@ -141,9 +143,10 @@ function CalculadoraContent() {
     return (
         <div className={styles.calculadoraPage}>
             <div className="container">
-                <h1 className={styles.pageTitle}>Calculadora de Presupuestos</h1>
+                <h1 className={styles.pageTitle}>📐 Calculadora de Presupuestos</h1>
                 <p className={styles.pageSubtitle}>
-                    Selecciona servicios, ingresa cantidades y obtén tu presupuesto personalizado
+                    Te explicamos paso a paso. Seleccioná servicios, ingresá cantidades y descubrí cuánto podés ahorrar.
+                    <strong> Precios honestos 2026.</strong>
                 </p>
 
                 <div className={styles.calculatorGrid}>
@@ -153,7 +156,12 @@ function CalculadoraContent() {
                             <h2 className={styles.cardTitle}>Agregar Servicio</h2>
 
                             <div className={styles.formGroup}>
-                                <label className={styles.label}>Seleccionar Servicio</label>
+                                <label className={styles.label}>
+                                    Seleccionar Servicio
+                                    <Tooltip content="Elegí el tipo de trabajo que necesitás. Si no estás seguro, contactanos por WhatsApp." position="right">
+                                        <span className={styles.helpIcon}>❓</span>
+                                    </Tooltip>
+                                </label>
                                 <select
                                     className={styles.select}
                                     value={selectedServiceId}
@@ -318,6 +326,9 @@ function CalculadoraContent() {
                                             </span>
                                         </div>
                                     </div>
+
+                                    {/* Payment Options */}
+                                    <PaymentOptions totalAmount={totalBudget} />
 
                                     <div className={styles.actions}>
                                         <button

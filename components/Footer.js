@@ -1,8 +1,12 @@
+'use client';
+
 import Link from 'next/link';
+import { useConfig } from './ConfigProvider';
 import styles from './Footer.module.css';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
+    const { config } = useConfig();
 
     return (
         <footer className={styles.footer}>
@@ -11,7 +15,7 @@ export default function Footer() {
                     <div className={styles.footerSection}>
                         <h3 className={styles.footerTitle}>
                             <span className={styles.footerIcon}>🏗️</span>
-                            Ezequiel Gauna
+                            {config.company_name}
                         </h3>
                         <p className={styles.footerDescription}>
                             Trabajos de albañilería profesionales con más de 10 años de experiencia.
@@ -44,15 +48,15 @@ export default function Footer() {
                     <div className={styles.footerSection}>
                         <h4 className={styles.footerSubtitle}>Contacto</h4>
                         <ul className={styles.footerLinks}>
-                            <li>📞 +54 9 11 1234-5678</li>
-                            <li>📧 info@construcciones.com</li>
-                            <li>📍 Buenos Aires, Argentina</li>
+                            <li>📞 {config.phone.replace(/(\d{2})(\d{1})(\d{2})(\d{4})(\d{4})/, '+$1 $2 $3 $4-$5').replace(/^(\d{11,13})$/, (m) => m)}</li>
+                            <li>📧 {config.email}</li>
+                            <li>📍 {config.zone}</li>
                         </ul>
                     </div>
                 </div>
 
                 <div className={styles.footerBottom}>
-                    <p>© {currentYear} Trabajos de Albañilería - Ezequiel Gauna. Todos los derechos reservados.</p>
+                    <p>© {currentYear} {config.company_name}. Todos los derechos reservados.</p>
                     <p className={styles.footerCredit}>
                         Hecho con 💪 para profesionales de la construcción
                     </p>

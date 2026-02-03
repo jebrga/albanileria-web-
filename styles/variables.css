@@ -1,68 +1,71 @@
 /* ==========================================
-   DARK MODE VARIABLES - Modern Construction Theme
+   DUAL MODE VARIABLES - Dark (Default) + Light Mode
    ========================================== */
 
-:root {
+:root,
+:root[data-theme="dark"] {
   /* ==========================================
-     DARK MODE COLOR PALETTE - Construction Premium
+     DARK MODE COLOR PALETTE - GBA Norte Adapted
      ========================================== */
 
   /* Background Colors - Dark Theme */
-  --bg-primary: #0A0E27;
-  /* Deep navy background */
-  --bg-secondary: #131829;
-  /* Card background */
-  --bg-tertiary: #1A1F3A;
-  /* Elevated surfaces */
-  --bg-glass: rgba(19, 24, 41, 0.7);
+  --bg-primary: #1F2937;
+  /* Gris oscuro moderno */
+  --bg-secondary: #111827;
+  /* Negro suave */
+  --bg-tertiary: #374151;
+  /* Gris medio para cards */
+  --bg-glass: rgba(31, 41, 55, 0.7);
   /* Glassmorphism */
 
-  /* Construction Accent Colors */
-  --primary: #FF6B35;
-  /* Construction Orange - High energy */
-  --primary-light: #FF8555;
+  /* Construction Accent Colors - Adaptados a clase media-baja */
+  --primary: #F97316;
+  /* Naranja energético saturado - CTAs */
+  --primary-light: #FB923C;
   /* Lighter variant */
-  --primary-dark: #E6512A;
+  --primary-dark: #EA580C;
   /* Darker variant */
-  --primary-glow: rgba(255, 107, 53, 0.3);
+  --primary-glow: rgba(249, 115, 22, 0.3);
 
-  --secondary: #00D9FF;
-  /* Electric Blue - Modern tech */
-  --secondary-light: #33E0FF;
-  --secondary-dark: #00B8DB;
-  --secondary-glow: rgba(0, 217, 255, 0.3);
+  --secondary: #3B82F6;
+  /* Azul trabajo confiable */
+  --secondary-light: #60A5FA;
+  --secondary-dark: #2563EB;
+  --secondary-glow: rgba(59, 130, 246, 0.3);
 
-  --accent: #FFB800;
-  /* Safety Yellow - Attention grabbing */
-  --accent-light: #FFC933;
-  --accent-glow: rgba(255, 184, 0, 0.3);
+  --accent: #EAB308;
+  /* Amarillo descuentos/ofertas */
+  --accent-light: #FBBF24;
+  --accent-glow: rgba(234, 179, 8, 0.3);
 
   /* Success/Warning/Error Colors */
-  --success: #00E676;
-  --success-glow: rgba(0, 230, 118, 0.3);
-  --warning: #FFB800;
-  --error: #FF3D57;
+  --success: #4ADE80;
+  /* Verde saturado para ahorros dark */
+  --success-glow: rgba(74, 222, 128, 0.3);
+  --warning: #FBBF24;
+  --error: #EF4444;
 
   /* Text Colors - High Contrast */
-  --text-primary: #FFFFFF;
-  --text-secondary: #B8C5D6;
-  /* Muted light blue-gray */
-  --text-tertiary: #6B7A90;
-  /* Even more muted */
-  --text-disabled: #3E4A5E;
+  --text-primary: #F3F4F6;
+  /* Blanco-gris claro */
+  --text-secondary: #D1D5DB;
+  /* Gris claro */
+  --text-tertiary: #9CA3AF;
+  /* Gris medio */
+  --text-disabled: #6B7280;
 
   /* Border & Divider Colors */
-  --border-subtle: rgba(184, 197, 214, 0.1);
-  --border-medium: rgba(184, 197, 214, 0.2);
-  --border-strong: rgba(184, 197, 214, 0.3);
-  --border-glow: rgba(0, 217, 255, 0.5);
+  --border-subtle: rgba(209, 213, 219, 0.1);
+  --border-medium: rgba(209, 213, 219, 0.2);
+  --border-strong: rgba(209, 213, 219, 0.3);
+  --border-glow: rgba(59, 130, 246, 0.5);
 
   /* Premium Gradients */
-  --gradient-primary: linear-gradient(135deg, #FF6B35 0%, #FF8555 100%);
-  --gradient-secondary: linear-gradient(135deg, #00D9FF 0%, #0099FF 100%);
-  --gradient-hero: linear-gradient(165deg, #0A0E27 0%, #1A1F3A 50%, #131829 100%);
-  --gradient-card: linear-gradient(135deg, rgba(19, 24, 41, 0.9) 0%, rgba(26, 31, 58, 0.9) 100%);
-  --gradient-glass: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(0, 217, 255, 0.1) 100%);
+  --gradient-primary: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+  --gradient-secondary: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+  --gradient-hero: linear-gradient(165deg, #1F2937 0%, #374151 50%, #111827 100%);
+  --gradient-card: linear-gradient(135deg, rgba(31, 41, 55, 0.9) 0%, rgba(55, 65, 81, 0.9) 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
 
   /* Shadows & Glows - Elevated UI */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
@@ -76,10 +79,95 @@
   --glow-success: 0 0 20px var(--success-glow);
 
   /* Glassmorphism Effects */
-  --glass-bg: rgba(19, 24, 41, 0.6);
+  --glass-bg: rgba(31, 41, 55, 0.6);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-blur: blur(20px);
+}
 
+/* ==========================================
+   LIGHT MODE COLOR PALETTE
+   ========================================== */
+
+:root[data-theme="light"] {
+  /* Background Colors - Light Theme */
+  --bg-primary: #FFFFFF;
+  /* Blanco puro */
+  --bg-secondary: #F9FAFB;
+  /* Gris muy claro */
+  --bg-tertiary: #F3F4F6;
+  /* Gris claro para cards */
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  /* Glassmorphism */
+
+  /* Construction Accent Colors - Light Mode */
+  --primary: #F97316;
+  /* Naranja energético (mismo) */
+  --primary-light: #FB923C;
+  --primary-dark: #EA580C;
+  --primary-glow: rgba(249, 115, 22, 0.2);
+
+  --secondary: #1D4ED8;
+  /* Azul oscuro para light mode */
+  --secondary-light: #3B82F6;
+  --secondary-dark: #1E40AF;
+  --secondary-glow: rgba(29, 78, 216, 0.2);
+
+  --accent: #D97706;
+  /* Amarillo más oscuro para contraste */
+  --accent-light: #F59E0B;
+  --accent-glow: rgba(217, 119, 6, 0.2);
+
+  /* Success/Warning/Error Colors */
+  --success: #22C55E;
+  /* Verde saturado para ahorros light */
+  --success-glow: rgba(34, 197, 94, 0.2);
+  --warning: #F59E0B;
+  --error: #DC2626;
+
+  /* Text Colors - Dark on Light */
+  --text-primary: #111827;
+  /* Negro suave */
+  --text-secondary: #374151;
+  /* Gris oscuro */
+  --text-tertiary: #6B7280;
+  /* Gris medio */
+  --text-disabled: #9CA3AF;
+
+  /* Border & Divider Colors */
+  --border-subtle: rgba(17, 24, 39, 0.1);
+  --border-medium: rgba(17, 24, 39, 0.2);
+  --border-strong: rgba(17, 24, 39, 0.3);
+  --border-glow: rgba(29, 78, 216, 0.4);
+
+  /* Premium Gradients - Light Mode */
+  --gradient-primary: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+  --gradient-secondary: linear-gradient(135deg, #1D4ED8 0%, #3B82F6 100%);
+  --gradient-hero: linear-gradient(165deg, #FFFFFF 0%, #F3F4F6 50%, #F9FAFB 100%);
+  --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(249, 250, 251, 0.9) 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(29, 78, 216, 0.05) 100%);
+
+  /* Shadows & Glows - Light Mode */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.2);
+
+  --glow-primary: 0 0 20px var(--primary-glow);
+  --glow-secondary: 0 0 20px var(--secondary-glow);
+  --glow-accent: 0 0 20px var(--accent-glow);
+  --glow-success: 0 0 20px var(--success-glow);
+
+  /* Glassmorphism Effects */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(17, 24, 39, 0.1);
+  --glass-blur: blur(20px);
+}
+
+/* ==========================================
+   SHARED VARIABLES (Both Modes)
+   ========================================== */
+
+:root {
   /* Spacing System - 8px base */
   --spacing-xs: 0.25rem;
   /* 4px */
@@ -168,6 +256,9 @@
   --container-lg: 1024px;
   --container-xl: 1280px;
   --container-2xl: 1536px;
+
+  /* Tamaños táctiles mínimos (mobile accessibility) */
+  --touch-min: 44px;
 
   /* Legacy Support - Backward Compatibility */
   --dark: var(--bg-primary);

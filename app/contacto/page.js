@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { contactViaWhatsApp } from '@/lib/whatsapp';
+import { useConfig } from '@/components/ConfigProvider';
+import { openWhatsApp } from '@/lib/whatsapp';
 import styles from './page.module.css';
 
 export default function ContactoPage() {
+    const { config } = useConfig();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -13,6 +15,13 @@ export default function ContactoPage() {
     });
 
     const [submitted, setSubmitted] = useState(false);
+
+    const handleWhatsAppClick = () => {
+        const message = '¡Hola! Me gustaría solicitar información sobre sus servicios de albañilería.';
+        const encodedMessage = encodeURIComponent(message);
+        const link = `https://wa.me/${config.phone}?text=${encodedMessage}`;
+        openWhatsApp(link);
+    };
 
     const handleChange = (e) => {
         setFormData(prev => ({
@@ -24,15 +33,23 @@ export default function ContactoPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // En una aplicación real, aquí enviarías el formulario a un backend
-        // Por ahora, solo mostramos mensaje de éxito
-        setSubmitted(true);
+        // Construir mensaje para WhatsApp con los datos del formulario
+        const message = `*Nueva Consulta desde Web*\n\n` +
+            `👤 Nombre: ${formData.name}\n` +
+            `📧 Email: ${formData.email}\n` +
+            `📱 Teléfono: ${formData.phone}\n\n` +
+            `💬 Mensaje:\n${formData.message}`;
 
-        // Reset después de 3 segundos
+        const encodedMessage = encodeURIComponent(message);
+        const link = `https://wa.me/${config.phone}?text=${encodedMessage}`;
+
+        // Simular envío
+        setSubmitted(true);
         setTimeout(() => {
+            window.open(link, '_blank');
             setSubmitted(false);
             setFormData({ name: '', email: '', phone: '', message: '' });
-        }, 3000);
+        }, 1500);
     };
 
     return (
@@ -54,9 +71,9 @@ export default function ContactoPage() {
                                     <div className={styles.infoIcon}>📞</div>
                                     <div>
                                         <h3>Teléfono</h3>
-                                        <p>+54 9 11 1234-5678</p>
+                                        <p>{config.phone.replace(/(\d{2})(\d{1})(\d{2})(\d{4})(\d{4})/, '+$1 $2 $3 $4-$5')}</p>
                                         <a
-                                            href="tel:+5491112345678"
+                                            href={`tel:${config.phone}`}
                                             className={styles.infoLink}
                                         >
                                             Llamar ahora
@@ -70,7 +87,7 @@ export default function ContactoPage() {
                                         <h3>WhatsApp</h3>
                                         <p>Respuesta inmediata</p>
                                         <button
-                                            onClick={contactViaWhatsApp}
+                                            onClick={handleWhatsAppClick}
                                             className={styles.infoLink}
                                         >
                                             Abrir WhatsApp
@@ -82,9 +99,9 @@ export default function ContactoPage() {
                                     <div className={styles.infoIcon}>📧</div>
                                     <div>
                                         <h3>Email</h3>
-                                        <p>info@construcciones.com</p>
+                                        <p>{config.email}</p>
                                         <a
-                                            href="mailto:info@construcciones.com"
+                                            href={`mailto:${config.email}`}
                                             className={styles.infoLink}
                                         >
                                             Enviar email
@@ -96,7 +113,7 @@ export default function ContactoPage() {
                                     <div className={styles.infoIcon}>📍</div>
                                     <div>
                                         <h3>Ubicación</h3>
-                                        <p>Buenos Aires, Argentina</p>
+                                        <p>{config.zone}</p>
                                         <p className={styles.workingHours}>
                                             Lun - Vie: 8:00 - 18:00<br />
                                             Sáb: 9:00 - 13:00
@@ -194,7 +211,7 @@ export default function ContactoPage() {
 
                                     <button
                                         type="button"
-                                        onClick={contactViaWhatsApp}
+                                        onClick={handleWhatsAppClick}
                                         className="btn btn-secondary"
                                         style={{ width: '100%', background: '#25D366' }}
                                     >
@@ -203,6 +220,26 @@ export default function ContactoPage() {
                                 </form>
                             )}
                         </div>
+                    </div>
+                </div>
+
+                {/* Google Maps Section */}
+                <div className={styles.mapSection}>
+                    <h2 className={styles.mapTitle}>📍 Área de Cobertura - GBA Norte</h2>
+                    <p className={styles.mapSubtitle}>
+                        Trabajamos en Los Polvorines, Grand Bourg, Tortuguitas, Pablo Nogués y zonas cercanas del GBA Norte
+                    </p>
+                    <div className={styles.mapContainer}>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52478.89463539966!2d-58.71809668524482!3d-34.542932267939816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbd6e9c0aaaab%3A0x4fbb6e3b3e4c3e3e!2sAlbañilería%20Ezequiel%20Gauna%20-%20Los%20Polvorines!5e0!3m2!1ses-419!2sar!4v1738602519123!5m2!1ses-419!2sar"
+                            width="100%"
+                            height="450"
+                            style={{ border: 0, borderRadius: 'var(--radius-lg)' }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Ubicación Albañilería Ezequiel Gauna - Los Polvorines, GBA Norte"
+                        ></iframe>
                     </div>
                 </div>
             </div>

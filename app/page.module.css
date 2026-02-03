@@ -65,6 +65,18 @@
   flex-wrap: wrap;
 }
 
+/* Testimonials Section */
+.testimonials {
+  padding: var(--spacing-4xl) 0;
+  background: var(--bg-primary);
+}
+
+/* Reviews Section */
+.reviews {
+  padding: 0;
+  background: var(--bg-secondary);
+}
+
 /* Features Section */
 .features {
   padding: var(--spacing-2xl) 0;

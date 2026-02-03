@@ -36,12 +36,21 @@
 }
 
 .logoText {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
 
 .logoText strong {
     font-weight: 900;
+}
+
+.logoLocation {
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+    font-weight: 400;
 }
 
 .nav {
@@ -92,23 +101,25 @@
     box-shadow: 0 0 10px var(--primary-glow);
 }
 
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .headerContent {
-        flex-direction: column;
+        flex-direction: row;
         gap: var(--spacing-md);
     }
 
     .nav {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-        width: 100%;
+        display: none;
     }
 
-    .navLink,
-    .navLinkActive {
-        width: 100%;
-        text-align: center;
+    .headerActions .btn {
+        display: none;
     }
 
     .logo {
