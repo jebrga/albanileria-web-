@@ -46,7 +46,9 @@ export default function ContactoPage() {
         // Simular envío
         setSubmitted(true);
         setTimeout(() => {
-            window.open(link, '_blank');
+            if (typeof window !== 'undefined') {
+                window.open(link, '_blank');
+            }
             setSubmitted(false);
             setFormData({ name: '', email: '', phone: '', message: '' });
         }, 1500);
