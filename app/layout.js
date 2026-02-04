@@ -19,6 +19,11 @@ export const metadata = {
   description: 'Precios justos para reformas y albañilería en GBA Norte. Descuentos hasta 25% en efectivo. Calculadora gratis. Servimos Los Polvorines, Grand Bourg, Tortuguitas y zona norte.',
   keywords: 'albañilería GBA Norte, presupuestos económicos Los Polvorines, remodelaciones baratas Grand Bourg, reformas Tortuguitas, albañil barato, cerámica económica, contrapisos económicos, revoque barato, ampliaciones',
   authors: [{ name: 'Ezequiel Gauna' }],
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
   openGraph: {
     title: 'Albañilería GBA Norte - Presupuestos Económicos',
     description: 'Precios justos para reformas. Descuentos hasta 25% en efectivo. Los Polvorines, Grand Bourg, Tortuguitas.',
