@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 const ThemeContext = createContext({
     theme: 'dark',
-    toggleTheme: () => {},
+    toggleTheme: () => { },
 });
 
 export function useTheme() {
@@ -18,16 +18,20 @@ export function ThemeProvider({ children }) {
 
     useEffect(() => {
         setMounted(true);
-        // Cargar tema guardado o usar dark por defecto
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        setTheme(savedTheme);
-        document.documentElement.setAttribute('data-theme', savedTheme);
+        // Cargar tema guardado o usar dark por defecto - solo en el cliente
+        if (typeof window !== 'undefined') {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
     }, []);
 
     const toggleTheme = () => {
         const newTheme = theme === 'dark' ? 'light' : 'dark';
         setTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('theme', newTheme);
+        }
         document.documentElement.setAttribute('data-theme', newTheme);
     };
 
